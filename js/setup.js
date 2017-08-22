@@ -1,7 +1,9 @@
+'use strict';
+
 var showSetup = document.querySelector('.setup');
 showSetup.classList.remove('hidden');
 
-namesArray = [
+var namesArray = [
 'Иван',
 'Хуан Себастьян',
 'Мария',
@@ -9,9 +11,10 @@ namesArray = [
 'Виктор',
 'Юлия',
 'Люпита',
-'Вашингтон'];
+'Вашингтон'
+];
 
-surnamesArray = [
+var surnamesArray = [
 'да Марья',
 'Верон',
 'Мирабелла',
@@ -19,21 +22,24 @@ surnamesArray = [
 'Онопко',
 'Топольницкая',
 'Нионго',
-'Ирвинг'];
+'Ирвинг'
+];
 
-coatsColor = [
+var coatsColor = [
 'rgb(101, 137, 164)',
 'rgb(241, 43, 107)',
 'rgb(146, 100, 161)',
 'rgb(56, 159, 117)',
 'rgb(215, 210, 55)',
-'rgb(0, 0, 0)'];
+'rgb(0, 0, 0)'
+];
 
-eyesColor = ['black',
+var eyesColor = ['black',
 'red',
 'blue',
 'yellow',
-'green'];
+'green'
+];
 
 var numberOfWizards = 4;
 
@@ -65,7 +71,7 @@ var generateWizard = function (wizards) {
 
   for (var i = 0; i < wizards.length; i++) {
     var elementWizard = template.cloneNode(true);
-    elementWizard.querySelector('.setup-similar-label').textContent = wizards[i].namesArray;
+    elementWizard.querySelector('.setup-similar-label').textContent = wizards[i].name;
     var elemCoat = elementWizard.querySelector('.wizard-coat');
     elemCoat.setAttribute('style', 'fill: ' + wizards[i].coatColor);
     var elemEyes = elementWizard.querySelector('.wizard-eyes');
