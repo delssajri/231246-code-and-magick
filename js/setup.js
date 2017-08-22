@@ -43,10 +43,10 @@ var eyesColor = ['black',
 
 var numberOfWizards = 4;
 
-var generateTestWizard = function (numberOfWizards, namesArray, surnamesArray, coatsColor, eyesColor) {
+var generateTestWizard = function (number, names, surnames, coats, eyes) {
   var setObjects = [];
 
-  for (var i = 0; i < numberOfWizards; i++) {
+  for (var i = 0; i < number; i++) {
     var randomNumberOne = Math.floor(Math.random() * 7);
     var randomNumberTwo = Math.floor(Math.random() * 7);
     var randomNumberThree = Math.floor(Math.random() * 5);
@@ -55,9 +55,9 @@ var generateTestWizard = function (numberOfWizards, namesArray, surnamesArray, c
     var objWizard = {}; // Создание объекта
 
     // Зададим объекту параметры
-    objWizard.name = namesArray[randomNumberOne] + ' ' + surnamesArray[randomNumberTwo];
-    objWizard.coatColor = coatsColor[randomNumberThree];
-    objWizard.eyesColor = eyesColor[randomNumberThour];
+    objWizard.name = names[randomNumberOne] + ' ' + surnames[randomNumberTwo];
+    objWizard.coatColor = coats[randomNumberThree];
+    objWizard.eyesColor = eyes[randomNumberThour];
 
     setObjects.push(objWizard);
   }
@@ -76,7 +76,6 @@ var generateWizard = function (wizards) {
     elemCoat.setAttribute('style', 'fill: ' + wizards[i].coatColor);
     var elemEyes = elementWizard.querySelector('.wizard-eyes');
     elemEyes.setAttribute('style', 'fill: ' + wizards[i].eyesColor);
-    
     fragment.appendChild(elementWizard);
   }
 
@@ -88,4 +87,5 @@ var wizards = generateTestWizard(numberOfWizards, namesArray, surnamesArray, coa
 generateWizard(wizards);
 
 var galleryElement = document.querySelector('.setup-similar');
-  galleryElement.classList.remove('hidden');
+galleryElement.classList.remove('hidden');
+
