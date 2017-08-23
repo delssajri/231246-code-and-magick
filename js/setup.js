@@ -43,21 +43,21 @@ var eyesColor = ['black',
 
 var numberOfWizards = 4;
 
+var generateRandom = function (arrayLenght) {
+  return Math.floor(Math.random() * arrayLenght);
+};
+
+
 var generateTestWizard = function (number, names, surnames, coats, eyes) {
   var setObjects = [];
 
   for (var i = 0; i < number; i++) {
-    var randomNumberOne = Math.floor(Math.random() * 7);
-    var randomNumberTwo = Math.floor(Math.random() * 7);
-    var randomNumberThree = Math.floor(Math.random() * 5);
-    var randomNumberThour = Math.floor(Math.random() * 4);
-
     var objWizard = {}; // Создание объекта
 
     // Зададим объекту параметры
-    objWizard.name = names[randomNumberOne] + ' ' + surnames[randomNumberTwo];
-    objWizard.coatColor = coats[randomNumberThree];
-    objWizard.eyesColor = eyes[randomNumberThour];
+    objWizard.name = names[generateRandom(names.length)] + ' ' + surnames[generateRandom(surnames.length)];
+    objWizard.coatColor = coats[generateRandom(coats.length)];
+    objWizard.eyesColor = eyes[generateRandom(eyes.length)];
 
     setObjects.push(objWizard);
   }
